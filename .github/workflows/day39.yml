@@ -1,0 +1,20 @@
+name: Day 39 First CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-web-page:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Check index.html
+        run: |
+          echo "Checking web page..."
+          test -f index.html
+          echo "index.html exists!"
