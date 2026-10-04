@@ -16,5 +16,5 @@ jobs:
       - name: Check index.html
         run: |
           echo "Checking web page..."
-          test -f index.html
+          test -f missing.html
           echo "index.html exists!"
