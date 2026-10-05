@@ -18,3 +18,9 @@ jobs:
           echo "Checking web page..."
           test -f index.html
           echo "index.html exists!"
+      - name: Check SSH secret
+        env:
+          EC2_SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        run: |
+          test -n "$EC2_SSH_PRIVATE_KEY"
+          echo "SSH secret is available!"
